@@ -284,6 +284,64 @@ body {
     border-radius: 8px;
 }
 
+.hero-placeholder {
+    background: linear-gradient(135deg, #f3f2f1, #e1dfdd);
+    border: 2px solid #0078d4;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-placeholder-content h3 {
+    color: #0078d4;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.hero-placeholder-content p {
+    color: #605e5c;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.hero-placeholder-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-placeholder-buttons .btn-primary,
+.hero-placeholder-buttons .btn-secondary {
+    padding: 12px 24px;
+    border: 2px solid #0078d4;
+    background: #0078d4;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.hero-placeholder-buttons .btn-secondary {
+    background: transparent;
+    color: #0078d4;
+}
+
+.hero-placeholder-buttons .btn-primary:hover,
+.hero-placeholder-buttons .btn-secondary:hover {
+    background: #106ebe;
+    color: white;
+    transform: translateY(-2px);
+}
+
 /* Products Section */
 .products {
     padding: 80px 20px;
@@ -326,6 +384,31 @@ body {
     object-fit: cover;
     border-radius: 6px;
     margin-bottom: 20px;
+}
+
+.product-image-placeholder {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #0078d4, #106ebe);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.product-icon {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.product-image-placeholder h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
 }
 
 .product-card h3 {
