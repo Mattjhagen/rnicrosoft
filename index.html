@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>rnicrosoft.com Security Training Simulation</title>
+    <meta
+      name="description"
+      content="A clearly labeled phishing-awareness training simulation for teaching users how to spot lookalike domains and suspicious sign-in prompts."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#training">Skip to training</a>
+    <header class="site-header">
+      <div class="brand" aria-label="rnicrosoft.com training simulation">
+        <span class="brand-mark" aria-hidden="true">r</span>
+        <span>
+          <strong>rnicrosoft.com</strong>
+          <small>security training simulation</small>
+        </span>
+      </div>
+      <nav class="top-nav" aria-label="Training navigation">
+        <a href="#red-flags">Red flags</a>
+        <a href="#practice">Practice</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#resources">Resources</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="simulation-banner" aria-label="Simulation disclosure">
+        <strong>Training simulation.</strong>
+        This page is not Microsoft, does not collect credentials, and is designed only for awareness education.
+      </section>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Lookalike domain drill</p>
+          <h1>Teach people to pause before they sign in.</h1>
+          <p>
+            Use this safe training page to demonstrate how a single character in a domain can change the risk profile of an otherwise familiar-looking request.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#practice">Start practice</a>
+            <a class="button secondary" href="#resources">Open resources</a>
+          </div>
+        </div>
+        <figure class="hero-art">
+          <img src="assets/training-hero.png" alt="Illustration of a person reviewing a suspicious browser address bar during security training.">
+        </figure>
+      </section>
+
+      <section class="url-lab" id="training" aria-labelledby="url-lab-title">
+        <div>
+          <p class="eyebrow">Browser inspection</p>
+          <h2 id="url-lab-title">Spot the switch</h2>
+          <p>
+            The safest first move is to inspect the actual domain before trusting the page design, email language, or sign-in prompt.
+          </p>
+        </div>
+        <div class="browser-shell" aria-label="Example suspicious browser window">
+          <div class="browser-top">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <div class="address-bar">
+              <span aria-hidden="true">https://</span><strong>rnicrosoft.com</strong><span>/account/security</span>
+            </div>
+          </div>
+          <div class="browser-content">
+            <div class="fake-card" aria-label="Non-functional training example">
+              <span class="fake-logo" aria-hidden="true">r</span>
+              <h3>Account notice</h3>
+              <p>This simulated prompt uses urgency to create pressure. It is intentionally non-functional.</p>
+              <button type="button" class="button muted" data-open-panel="url">Why this is risky</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="red-flags" id="red-flags" aria-labelledby="red-flags-title">
+        <div class="section-heading">
+          <p class="eyebrow">Red flags</p>
+          <h2 id="red-flags-title">What trainees should notice</h2>
+        </div>
+        <div class="flag-grid">
+          <article class="flag-card">
+            <span class="flag-icon" aria-hidden="true">URL</span>
+            <h3>Lookalike letters</h3>
+            <p><strong>rn</strong> can resemble <strong>m</strong> at a glance. Read the registered domain slowly before interacting.</p>
+            <button type="button" data-open-panel="url">Inspect domain</button>
+          </article>
+          <article class="flag-card">
+            <span class="flag-icon" aria-hidden="true">!</span>
+            <h3>Urgency language</h3>
+            <p>Pressure like “act now” or “account disabled” should trigger verification through a known trusted channel.</p>
+            <button type="button" data-open-panel="urgency">Review cue</button>
+          </article>
+          <article class="flag-card">
+            <span class="flag-icon" aria-hidden="true">ID</span>
+            <h3>Credential requests</h3>
+            <p>A training page should never collect real usernames, passwords, MFA codes, or recovery data.</p>
+            <button type="button" data-open-panel="credentials">Safe handling</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="practice" id="practice" aria-labelledby="practice-title">
+        <div class="practice-copy">
+          <p class="eyebrow">Interactive practice</p>
+          <h2 id="practice-title">Choose the safest response</h2>
+          <p>
+            A message claims your account will be locked and sends you to <strong>rnicrosoft.com</strong>. What should you do?
+          </p>
+        </div>
+        <div class="choice-panel" role="group" aria-label="Training choices">
+          <button type="button" class="choice" data-choice="report">
+            Report it to security and open the service from a trusted bookmark.
+          </button>
+          <button type="button" class="choice" data-choice="click">
+            Click through because the page looks familiar.
+          </button>
+          <button type="button" class="choice" data-choice="reply">
+            Reply to the sender asking whether it is legitimate.
+          </button>
+        </div>
+        <output class="result" id="result" aria-live="polite">Pick an action to see coaching feedback.</output>
+      </section>
+
+      <section class="domain-tool" aria-labelledby="domain-tool-title">
+        <div class="section-heading">
+          <p class="eyebrow">Domain check</p>
+          <h2 id="domain-tool-title">Compare before you click</h2>
+          <p>
+            Paste or type a training URL to see the registered domain and whether it matches the expected destination.
+          </p>
+        </div>
+        <form class="domain-form" id="domain-form">
+          <label for="domain-input">Training URL</label>
+          <div class="domain-row">
+            <input id="domain-input" type="url" value="https://rnicrosoft.com/account/security" autocomplete="off" spellcheck="false">
+            <button type="submit">Check URL</button>
+          </div>
+        </form>
+        <output class="domain-result" id="domain-result" aria-live="polite">
+          Enter a URL and run the check.
+        </output>
+      </section>
+
+      <section class="quiz" id="quiz" aria-labelledby="quiz-title">
+        <div class="section-heading">
+          <p class="eyebrow">Knowledge check</p>
+          <h2 id="quiz-title">Three-question drill</h2>
+        </div>
+        <form class="quiz-form" id="quiz-form">
+          <fieldset>
+            <legend>1. What is the safest way to reach a sensitive account page?</legend>
+            <label><input type="radio" name="q1" value="1"> Use a saved bookmark or type the known address yourself.</label>
+            <label><input type="radio" name="q1" value="0"> Trust a link if the page layout looks familiar.</label>
+          </fieldset>
+          <fieldset>
+            <legend>2. What should you do with a message that pressures you to act immediately?</legend>
+            <label><input type="radio" name="q2" value="1"> Pause and verify through an approved reporting or support channel.</label>
+            <label><input type="radio" name="q2" value="0"> Reply to the sender to ask if the message is real.</label>
+          </fieldset>
+          <fieldset>
+            <legend>3. Should this training page collect real passwords or MFA codes?</legend>
+            <label><input type="radio" name="q3" value="1"> No. A safe simulation never collects real secrets.</label>
+            <label><input type="radio" name="q3" value="0"> Yes, if the audience has been warned first.</label>
+          </fieldset>
+          <button type="submit" class="primary">Score quiz</button>
+        </form>
+        <output class="quiz-result" id="quiz-result" aria-live="polite">Complete the three questions to get a score.</output>
+      </section>
+
+      <section class="report-helper" aria-labelledby="report-helper-title">
+        <div class="report-copy">
+          <p class="eyebrow">Report helper</p>
+          <h2 id="report-helper-title">Draft a safe internal report</h2>
+          <p>
+            This template avoids secrets and focuses on observable facts security teams can triage.
+          </p>
+        </div>
+        <div class="report-box">
+          <pre id="report-template">Subject: Suspicious lookalike-domain training example
+
+Observed URL: https://rnicrosoft.com/account/security
+Reason for concern: The registered domain appears to be rnicrosoft.com, not microsoft.com.
+Recommended action: Do not enter credentials. Report through the approved security channel and use a trusted bookmark to reach the real service.</pre>
+          <button type="button" id="copy-report">Copy report draft</button>
+          <output id="copy-status" aria-live="polite">Ready to copy.</output>
+        </div>
+      </section>
+
+      <section class="resources" id="resources" aria-labelledby="resources-title">
+        <div class="section-heading">
+          <p class="eyebrow">Working links</p>
+          <h2 id="resources-title">Safe next steps</h2>
+        </div>
+        <div class="resource-list">
+          <a href="https://support.microsoft.com/en-us/windows/protect-yourself-from-phishing-0c7ea947-ba98-3bd9-7184-430e1f860a44" target="_blank" rel="noopener noreferrer">
+            Microsoft phishing guidance
+            <span>Recognize suspicious messages and requests.</span>
+          </a>
+          <a href="https://www.microsoft.com/security/blog/" target="_blank" rel="noopener noreferrer">
+            Microsoft Security Blog
+            <span>Current security research and defense guidance.</span>
+          </a>
+          <a href="https://www.cisa.gov/secure-our-world/spot-phishing" target="_blank" rel="noopener noreferrer">
+            CISA phishing education
+            <span>Public awareness materials for safe reporting habits.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <aside class="coach-panel" id="coach-panel" aria-hidden="true" aria-labelledby="coach-title">
+      <div class="coach-card" role="dialog" aria-modal="false">
+        <button type="button" class="close-panel" aria-label="Close coaching panel">×</button>
+        <p class="eyebrow">Coach note</p>
+        <h2 id="coach-title">Domain mismatch</h2>
+        <p id="coach-body">
+          The registered domain is the part immediately before the public suffix. Here, that is rnicrosoft.com, not microsoft.com.
+        </p>
+      </div>
+    </aside>
+
+    <footer class="site-footer">
+      <p>For internal awareness training only. No credential fields, tracking pixels, or impersonation assets are included.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
